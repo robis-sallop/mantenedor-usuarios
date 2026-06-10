@@ -123,6 +123,14 @@ export default function UserForm({ onSubmit, onCancel, initialData }: Props) {
     }
     await onSubmit(form);
   };
+  const handleCancel = () => {
+    setForm(emptyForm);
+    setRutInput('');
+    setDateInput('');
+    setRutError(null);
+    setDateError(null);
+    onCancel();
+  };
   const today = new Date();
 
   const isoFromDisplay = (display: string) => {
@@ -244,7 +252,7 @@ export default function UserForm({ onSubmit, onCancel, initialData }: Props) {
 
       <div className="form-actions">
         <button type="submit">{initialData ? 'Actualizar usuario' : 'Crear usuario'}</button>
-        <button type="button" className="secondary" onClick={onCancel}>
+        <button type="button" className="secondary" onClick={handleCancel}>
           Cancelar
         </button>
       </div>

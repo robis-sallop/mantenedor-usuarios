@@ -17,11 +17,21 @@ spring:
 
 springdoc:
   api-docs:
-    path: /v3/api-docs
+    enabled: true
   swagger-ui:
-    path: /swagger-ui.html
+    enabled: true
+    try-it-out-enabled: false
 
 logging:
   level:
     org.springframework: INFO
 
+swagger:
+  info:
+    title: "Mantenedor de Usuarios API"
+    description: "API REST simple para crear, listar, actualizar y eliminar usuarios."
+    version: "1.0"
+    name: "Roberto Salinas"
+    contact:
+      name: "Roberto Salinas"
+      email: "roberto.ismael90@gmail.com"

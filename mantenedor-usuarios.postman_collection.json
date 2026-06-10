@@ -1,0 +1,147 @@
+{
+  "info": {
+    "_postman_id": "ed2cce9b-9c03-457b-b5ee-ea29f2063113",
+    "name": "mantenedor-usuarios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32717906",
+    "_collection_link": "https://go.postman.co/collection/32717906-ed2cce9b-9c03-457b-b5ee-ea29f2063113?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear Usuarios",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombres\": \"Juan\",\r\n    \"apellidos\": \"Perez\",\r\n    \"rut\": 12345678,\r\n    \"dv\": \"9\",\r\n    \"fechaNacimiento\": \"1990-01-15\",\r\n    \"correoElectronico\": \"juan@example.com\",\r\n    \"contrasena\": \"miContrasena123\"\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:8080/api/users \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"nombres\": \"Juan\",\r\n    \"apellidos\": \"Perez\",\r\n    \"rut\": 12345678,\r\n    \"dv\": \"9\",\r\n    \"fechaNacimiento\": \"1990-01-15\",\r\n    \"correoElectronico\": \"juan@example.com\",\r\n    \"contrasena\": \"miContrasena123\"\r\n  }'"
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener Usuario por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET http://localhost:8080/api/users/1"
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Usuarios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET http://localhost:8080/api/users"
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Usuarios",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombres\": \"Juan Carlos\",\r\n    \"apellidos\": \"Perez Lopez\",\r\n    \"rut\": 12345678,\r\n    \"dv\": \"9\",\r\n    \"fechaNacimiento\": \"1990-01-15\",\r\n    \"correoElectronico\": \"juancarlos@example.com\",\r\n    \"contrasena\": \"nuevaContrasena456\"\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl -X PUT http://localhost:8080/api/users/1 \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"nombres\": \"Juan Carlos\",\r\n    \"apellidos\": \"Perez Lopez\",\r\n    \"rut\": 12345678,\r\n    \"dv\": \"9\",\r\n    \"fechaNacimiento\": \"1990-01-15\",\r\n    \"correoElectronico\": \"juancarlos@example.com\",\r\n    \"contrasena\": \"nuevaContrasena456\"\r\n  }'"
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Usuarios",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl -X DELETE http://localhost:8080/api/users/1"
+      },
+      "response": []
+    }
+  ]
+}

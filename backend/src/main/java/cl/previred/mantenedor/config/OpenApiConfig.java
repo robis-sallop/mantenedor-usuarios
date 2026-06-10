@@ -3,8 +3,9 @@ package cl.previred.mantenedor.config;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.info.License;
+import io.swagger.v3.oas.models.responses.ApiResponse;
 import org.springframework.context.annotation.Bean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -15,17 +16,22 @@ import org.springframework.context.annotation.Configuration;
  * @version 1.0
  */
 @Configuration
+@EnableConfigurationProperties(OpenApiProperties.class)
 public class OpenApiConfig {
 
     @Bean
-    public OpenAPI customOpenAPI() {
+    public OpenAPI customOpenAPI(OpenApiProperties properties) {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Mantenedor de Usuarios API")
-                        .version("0.0.1")
-                        .description("API REST simple para crear, listar, actualizar y eliminar usuarios.")
-                        .contact(new Contact().name("Roberto Salinas").email("roberto.ismael90@gmail.com"))
+                        .title(properties.title())
+                        .version(properties.version())
+                        .description(properties.description())
+                        .contact(new Contact()
+                                .name(properties.contact().name())
+                                .email(properties.contact().email()))
                 );
     }
+    @Bean
+    public ApiResponse apiResponse(){ return new ApiResponse(); }
 }
 
