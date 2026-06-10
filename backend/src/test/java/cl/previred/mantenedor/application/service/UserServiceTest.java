@@ -82,6 +82,33 @@ class UserServiceTest {
     }
 
     @Test
+    void getUser_found() {
+        User existing = User.builder().id(5L).nombres("Pedro").build();
+        when(repository.findById(5L)).thenReturn(Optional.of(existing));
+
+        Optional<User> u = service.getUser(5L);
+        assertTrue(u.isPresent());
+        assertEquals(5L, u.get().getId());
+    }
+
+    @Test
+    void listUsers_returnsAll() {
+        User u1 = User.builder().id(6L).nombres("A").build();
+        User u2 = User.builder().id(7L).nombres("B").build();
+        when(repository.findAll()).thenReturn(java.util.List.of(u1, u2));
+
+        java.util.List<User> list = service.listUsers();
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    void createUser_missingEmail_throws() {
+        User u = User.builder().nombres("NoEmail").build();
+
+        assertThrows(IllegalArgumentException.class, () -> service.createUser(u));
+    }
+
+    @Test
     void updateUser_success() {
         User existing = User.builder()
                 .id(1L)
