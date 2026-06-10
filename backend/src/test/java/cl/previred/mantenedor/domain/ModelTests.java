@@ -10,6 +10,12 @@ import java.time.OffsetDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/*
+ * ModelTests.
+ *
+ * @author  Roberto Salinas
+ * @version 1.0
+ */
 class ModelTests {
 
     @Test

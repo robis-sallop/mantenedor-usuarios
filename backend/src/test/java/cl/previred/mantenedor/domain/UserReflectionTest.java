@@ -8,6 +8,12 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/*
+ * UserReflectionTest.
+ *
+ * @author  Roberto Salinas
+ * @version 1.0
+ */
 class UserReflectionTest {
 
     @Test

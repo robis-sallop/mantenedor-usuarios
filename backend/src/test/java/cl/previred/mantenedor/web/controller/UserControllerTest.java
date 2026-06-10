@@ -24,6 +24,13 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+
+/* 
+* UserControllerTest. 
+*
+* @author  Roberto Salinas
+* @version 1.0
+*/
 @WebMvcTest(UserController.class)
 class UserControllerTest {
 

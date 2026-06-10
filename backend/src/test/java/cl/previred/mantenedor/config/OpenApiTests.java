@@ -4,6 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/*
+* OpenApiTest.
+*
+* @author  Roberto Salinas
+* @version 1.0
+*/
 class OpenApiTests {
 
     @Test
